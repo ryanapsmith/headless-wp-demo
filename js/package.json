@@ -1,0 +1,52 @@
+{
+  "name": "elasticpress-search-ui",
+  "version": "1.0.0",
+  "description": "Replaces WordPress theme template with React application",
+  "main": "index.js",
+  "type": "module",
+  "author": "Ryan Smith",
+  "license": "ISC",
+  "scripts": {
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
+  },
+  "devDependencies": {
+    "@apollo/server": "^4.11.3",
+    "@svgr/webpack": "^8.1.0",
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "@wordpress/scripts": "^30.7.0",
+    "apollo-server": "^3.13.0",
+    "graphql-tag": "^2.12.6",
+    "mini-css-extract-plugin": "^2.9.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "uuid": "^11.0.3",
+    "wp-types": "^4.67.0"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.12.3",
+    "@elastic/elasticsearch": "7.13.0",
+    "@wordpress/api-fetch": "^7.15.1",
+    "@wordpress/url": "^4.18.0",
+    "dotenv": "^16.4.7",
+    "graphql": "^16.10.0",
+    "lodash.debounce": "^4.0.8",
+    "php-unserialize": "^0.0.1",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-router": "^7.2.0",
+    "styled-components": "^6.1.14"
+  }
+}

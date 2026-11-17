@@ -1,0 +1,40 @@
+{
+    "name": "sample/elasticpress-search-ui",
+    "description": "Creates React-based search results page with content indexed from ElasticPress",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "Sample\\ElasticPressSearchUi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ryan Smith"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://connect.advancedcustomfields.com"
+        }
+    ],
+    "require": {
+        "stoutlogic/acf-builder": "^1.12"
+    },
+    "require-dev": {
+        "wpengine/advanced-custom-fields": "^6.3.11",
+        "10up/elasticpress": "^5.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "/app/wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ]
+        }
+    }
+}

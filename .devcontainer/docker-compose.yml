@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  wordpress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspaces/${localWorkspaceFolderBasename}:cached
+      - wordpress_files:/var/www/html
+    command: sleep infinity
+    depends_on:
+      db:
+        # This condition tells Docker to wait until the db healthcheck passes
+        condition: service_healthy
+
+  db:
+    image: mariadb:10.6
+    restart: unless-stopped
+    volumes:
+      - wordpress_db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: password
+    expose:
+      - 3306
+    # Healthcheck to ensure the database is ready for connections
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  wordpress_db_data:
+  wordpress_files:

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./build/",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "module": "es2020",
+    "target": "es6",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src",
+    "src/types/**/*.d.ts" 
+  ],
+  "exclude": [
+    "src/index.html",
+    "build",
+    "node_modules",
+    "vendor"
+  ]
+}
